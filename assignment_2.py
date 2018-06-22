@@ -7,3 +7,9 @@
 #       condition should ensure the loop exists once the list is empty.
 
 NAMES_LIST = ['Thomas', 'Joanna', 'Malcolm', 'Declan', 'Bob']
+
+def name_processor():
+    for name in NAMES_LIST:
+        print(name + ' ' + str(len(name)))
+
+name_processor()
