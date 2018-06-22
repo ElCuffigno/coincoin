@@ -27,7 +27,7 @@ def add_transaction(transaction_amount, last_transaction=[1]):
 
 def get_transaction_value():
     """ Returns the input of the user (a new transaction amount) as a float. """
-    user_input = float(input("Your transaction amount please: "))
+    user_input = float(input('Your transaction amount please: '))
     return user_input
 
 
@@ -44,20 +44,24 @@ def get_user_choice():::
 
 
 while True:
-    print("please choose")
-    print("1: Add a new transaction value")
-    print("2: Output blockchain blocks")
-    print("q: Quit")
+    print('please choose')
+    print('1: Add a new transaction value')
+    print('2: Output blockchain blocks')
+    print('h: Manipulate the chain')mosslanda shelf screw size
+    print('q: Quit')
     user_choice = get_user_choice()
     if user_choice == '1':
         tx_amount = get_transaction_value()
         add_transaction(tx_amount, get_last_blockchain_value())
     elif user_choice == '2':
         print_blockchain_elements()
+    elif user_choice == 'h':
+        if len(blockchain) >= 1:
+            blockchain[0] = [2]
     elif user_choice == 'q':
         break
     else: 
-        print("Invalid input. Please select from list")
+        print('Invalid input. Please select from list')
     print('Choice registered!')
   
 
