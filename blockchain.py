@@ -46,19 +46,28 @@ def get_user_choice():
 
 
 def verify_chain():
-    block_index = 0
+    # block_index = 0
     is_valid = True
-    for block in blockchain:
+    for block_index in range(len(blockchain)):
         if block_index == 0:
-            block_index += 1
             continue
-        # block_index used to find the correct block in the chain to check
-        if block[0] == blockchain[block_index - 1]:
+            # block_index used to find the correct block in the chain to check
+        elif blockchain[block_index][0] == blockchain[block_index - 1]:
             is_valid = True
         else: 
             is_valid = False
             break
-        block_index +=1
+    # for block in blockchain:
+    #     if block_index == 0:
+    #         block_index += 1
+    #         continue
+    #     # block_index used to find the correct block in the chain to check
+    #     if block[0] == blockchain[block_index - 1]:
+    #         is_valid = True
+    #     else: 
+    #         is_valid = False
+    #         break
+    #     block_index +=1
     return is_valid
         
 
