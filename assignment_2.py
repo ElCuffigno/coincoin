@@ -15,3 +15,8 @@ def name_processor():
         
 
 name_processor()
+
+# checks global name list length. With no elements, len == 0 == False
+while len(NAMES_LIST):
+    #Added print to see names being removed
+    print(NAMES_LIST.pop())
