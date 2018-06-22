@@ -37,7 +37,7 @@ def print_blockchain_elements():
         print('Outputting block')
         print(block)
 
-def get_user_choice():
+def get_user_choice():::
     user_input = input('Your choice: ')
     return user_input
 
