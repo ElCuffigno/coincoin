@@ -51,7 +51,6 @@ def verify_chain():
     for block_index in range(len(blockchain)):
         if block_index == 0:
             continue
-            # block_index used to find the correct block in the chain to check
         elif blockchain[block_index][0] == blockchain[block_index - 1]:
             is_valid = True
         else: 
