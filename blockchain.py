@@ -29,9 +29,9 @@ while True:
     tx_input = get_user_input()
     add_value(tx_input, get_last_blockchain_value())
 
-# Output the blockchain list to the console
-for block in blockchain:
-    print('Outputting block')
-    print(block)
+    # Output the blockchain list to the console
+    for block in blockchain:
+        print('Outputting block')
+        print(block)
 
 print('done!')
