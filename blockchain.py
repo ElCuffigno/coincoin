@@ -37,17 +37,34 @@ def print_blockchain_elements():
         print('Outputting block')
         print(block)
 
-def get_user_choice():::
+
+def get_user_choice():
     user_input = input('Your choice: ')
     return user_input
 
 
+def verify_chain():
+    block_index = 0
+    is_valid = True
+    for block in blockchain:
+        if block_index == 0:
+            block_index += 1
+            continue
+        # block_index used to find the correct block in the chain to check
+        if block[0] == blockchain[block_index - 1]:
+            is_valid = True
+        else: 
+            is_valid = False
+            break
+        block_index +=1
+    return is_valid
+        
 
 while True:
     print('please choose')
     print('1: Add a new transaction value')
     print('2: Output blockchain blocks')
-    print('h: Manipulate the chain')mosslanda shelf screw size
+    print('h: Manipulate the chain')
     print('q: Quit')
     user_choice = get_user_choice()
     if user_choice == '1':
@@ -62,6 +79,9 @@ while True:
         break
     else: 
         print('Invalid input. Please select from list')
+    if not verify_chain():
+        print("invalid blockchain!")
+        break
     print('Choice registered!')
   
 
