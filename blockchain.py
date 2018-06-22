@@ -84,7 +84,8 @@ while waiting_for_input:
     if not verify_chain():
         print("invalid blockchain!")
         break
-    print('Choice registered!')
-  
+else: 
+    print('User left!')
+
 
 print('done!')
