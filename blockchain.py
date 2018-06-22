@@ -43,7 +43,7 @@ def mine_block():
     including open transactions
     """
     last_block = blockchain[-1]
-    hashed_block = str([last_block[key] for key in last_block])
+    hashed_block = '-'.join([str(last_block[key]) for key in last_block])
     print(hashed_block)
 
     block = {
