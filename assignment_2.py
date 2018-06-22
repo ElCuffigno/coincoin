@@ -10,6 +10,8 @@ NAMES_LIST = ['Thomas', 'Joanna', 'Malcolm', 'Declan', 'Bob']
 
 def name_processor():
     for name in NAMES_LIST:
-        print(name + ' ' + str(len(name)))
+        if len(name) > 5:
+            print(name + ' ' + str(len(name)))
+        
 
 name_processor()
