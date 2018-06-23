@@ -85,7 +85,7 @@ def verify_chain():
         # enumerate returns a tuple with the index of an element in list and the element
         if index == 0:
             continue
-        if block['previous_hash'] != hash_block(blockchain[index - 1])
+        if block['previous_hash'] != hash_block(blockchain[index - 1]):
             return False
     return True
 
@@ -113,14 +113,18 @@ while waiting_for_input:
         print_blockchain_elements()
     elif user_choice == 'h':
         if len(blockchain) >= 1:
-            blockchain[0] = [2]
+            blockchain[0] = {
+                'previous_hash' : '', 
+                'index': 0, 
+                'transactions' : [{'sender': 'Chris', 'recipient': 'Max', 'amount': 100.0}]
+            }
     elif user_choice == 'q':
         waiting_for_input = False
     else:
         print('Invalid input. Please select from list')
-    # if not verify_chain():
-    #     print("invalid blockchain!")
-    #     break
+    if not verify_chain():
+        print("invalid blockchain!")
+        break
 else:
     print('User left!')
 
