@@ -1,4 +1,6 @@
 # Initializing our blockchain list
+MINING_REWARD = 10
+
 genesis_block = {
     'previous_hash': '',
     'index': 0,
@@ -34,6 +36,13 @@ def get_last_blockchain_value():
     # This only executes if the above is false
     return blockchain[-1]
 
+
+def verify_transaction(tranaction):
+    sender_balance = get_balance(tranaction['sender'])
+    return sender_balance >- tranaction['amount']
+
+
+
 # This function accepts two arguments.
 # One required one (transaction_amount) and one optional one (last_transaction)
 # The optional one is optional because it has a default value => [1]
@@ -64,6 +73,12 @@ def mine_block():
     """
     last_block = blockchain[-1]
     hashed_block = hash_block(last_block)
+    reward_transaction = {
+        'sender': 'MINING',
+        'recipient': owner,
+        'amount': MINING_REWARD
+    }
+    open_transactions.append(reward_transaction)
     block = {
         'previous_hash': hashed_block,
         'index': len(blockchain),
