@@ -48,14 +48,7 @@ def verify_transaction(tranaction):
     return sender_balance >= tranaction['amount']
 
 def verify_transactions():
-    is_valid = True
-    for tx in open_transactions:
-        if verify_transaction(tx):
-            is_valid = True
-        else: 
-            is_valid = False
-
-    return is_valid
+   return all([verify_transaction(tx) for tx in open_transactions])
 
 
 # This function accepts two arguments.
