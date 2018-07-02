@@ -23,3 +23,25 @@ s = {'Max', 'Anna', 'Max'}
 # use IDE autocomplete to see methods (s.)
 print(s)
 # del doesn't work for sets
+
+new_list = [1, 2, 3, -5]
+any(new_list)
+# should return True
+
+# returns false
+all(new_list)
+
+number_list = [1, 2, 3, -5]
+#list comprehension to check for positive numbers
+[el for el in number_list if el > 0]
+# returns [1, 2, 3]
+
+[el > 0 for el in number_list if el > 0]
+# returns booleans for list [True, True, True]
+
+# We can use any or all with list comprehension
+[el > 0 for el in number_list]
+# returns [True, True, True, False]
+
+all([el > 0 for el in number_list])
+# returns False
