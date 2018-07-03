@@ -4,20 +4,21 @@
 # 4) Copy the person list such that you can safely edit the name of the first person (without changing the original list).
 # 5) Unpack the persons of the original list into different variables and output these variables.
 
-persons = [{
-    'name': 'Bob',
-    'age': 35,
-    'hobbies': ['golf', 'reading', 'skiing']
+persons = [
+    {
+        'name': 'Bob',
+        'age': 35,
+        'hobbies': ['golf', 'reading', 'skiing']
     },
     {
-    'name': 'Nacho',
-    'age': 23,
-    'hobbies': ['futbol', 'barbering']
+        'name': 'Nacho',
+        'age': 23,
+        'hobbies': ['futbol', 'barbering']
     },
     {
-    'name': 'Thorborg',
-    'age': 3,
-    'hobbies': ['drawing', 'colors', 'planes', 'yelling']
+        'name': 'Thorborg',
+        'age': 3,
+        'hobbies': ['drawing', 'colors', 'planes', 'yelling']
     }
 ]
 
