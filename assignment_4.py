@@ -16,8 +16,8 @@ def normal_func(funco, *args):
     elif len(args) == 1:
         return args
     else:
-        a, b = args
-        return funco(a, b)
+        for arg in args:
+            
 
 
 # 4) Format the output of your “normal” function such that numbers look nice and are centered in a 20 character column.
